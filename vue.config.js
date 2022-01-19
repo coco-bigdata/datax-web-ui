@@ -33,28 +33,7 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
-    },
-    proxy: {
-      // detail: https://cli.vuejs.org/config/#devserver-proxy
-      //代理 /dev-api/api 到 http://localhost:8066/api
-      [process.env.VUE_APP_API]: {
-        target: `http://localhost:${apiPort}/api`,
-        changeOrigin: true,
-        pathRewrite: {
-          ['^' + process.env.VUE_APP_API]: ''
-        }
-      },
-      // mock 的代理
-      // change xxx-api/login => mock/login
-      [process.env.VUE_APP_BASE_API]: {
-        target: `http://localhost:${port}/mock`,
-        changeOrigin: true,
-        pathRewrite: {
-          ['^' + process.env.VUE_APP_BASE_API]: ''
-        }
-      }
-    },
-    after: require('./mock/mock-server.js')
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
