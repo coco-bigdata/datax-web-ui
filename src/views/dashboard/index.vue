@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    nothing here
+    蠃鱼数据中台
   </div>
 </template>
 
